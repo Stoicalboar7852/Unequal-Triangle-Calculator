@@ -25,7 +25,19 @@
         <input id="sideLength1" type="text" placeholder="Side Length 1" />
         <input id="sideLength2" type="text" placeholder="Side Length 2" />
         <input id="sideLength3" type="number" placeholder="Side Length 3" />
-        <button class="button general" onclick="setTeamNames()">Set Team Names</button>
+        <button class="button general" onclick="calculate()">Calculate</button>
+        <h2 id="status">Not Yet Calculated</h2>
       </div>
 </body>
+<script>
+  const status = document.getElementById('status');
+
+  function calculate() {
+    const sideLength1 = document.getElementById('sideLength1').value;
+    const sideLength2 = document.getElementById('sideLength2').value;
+    const sideLength3 = document.getElementById('sideLength3').value;
+    const sideLengths = [sideLength1, sideLength2, sideLength3]
+    status.textcontent = sideLengths;
+  }
+</script>
 </html>
