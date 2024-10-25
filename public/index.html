@@ -42,7 +42,7 @@
     const status = document.getElementById('status');
     const sideLengths = [sideLength1, sideLength2, sideLength3];
     sideLengths.sort(function(a, b){return a-b});
-    if (3 + 3 > 5) {
+    if (sideLengths[0] + sideLengths[1] > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
     } else {
       document.getElementById('display').innerHTML = "This is not a Triangle";
