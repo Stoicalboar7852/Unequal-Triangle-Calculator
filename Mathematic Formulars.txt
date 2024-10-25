@@ -1,0 +1,2 @@
+Calculating angles
+angle C = c^2 - (b^2 + a^2) 
