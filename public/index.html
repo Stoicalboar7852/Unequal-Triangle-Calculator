@@ -26,7 +26,7 @@
         <input id="sideLength2" type="text" placeholder="Side Length 2" />
         <input id="sideLength3" type="number" placeholder="Side Length 3" />
         <button class="button general" onclick="calculate()">Calculate</button>
-        <h2 id="status">Not Yet Calculated</h2>
+        <h2 id="display"></h2>
       </div>
 </body>
 <script>
@@ -38,7 +38,8 @@
     const sideLength3 = document.getElementById('sideLength3').value;
     const status = document.getElementById('status');
     const sideLengths = [sideLength1, sideLength2, sideLength3]
-    status.textcontent = "1";
+    sideLengths.sort(function(a, b){return a-b});
+    document.getElementById("display") = sideLengths
   }
 </script>
 </html>
