@@ -27,10 +27,16 @@
         <input id="sideLength3" type="number" placeholder="Side Length 3" />
         <button class="button general" onclick="calculate()">Calculate</button>
         <h2 id="display">h</h2>
+        <p id="demo"></p>
       </div>
 </body>
 <script>
   const status = document.getElementById('status');
+  const scores = [1, 150, 25, 30]
+  scores.sort(function(a,b){return a-b});
+  document.getElementById('display') = scores;
+
+
 
   function calculate() {
     const sideLength1 = document.getElementById('sideLength1').value;
