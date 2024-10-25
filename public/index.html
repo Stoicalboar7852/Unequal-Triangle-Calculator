@@ -31,10 +31,7 @@
       </div>
 </body>
 <script>
-  const status = document.getElementById('status');
-  const scores = [1, 150, 25, 30]
-  scores.sort(function(a,b){return a-b});
-  document.getElementById('display') = scores;
+  const display = document.getElementById('display');
 
 
 
@@ -43,9 +40,9 @@
     const sideLength2 = document.getElementById('sideLength2').value;
     const sideLength3 = document.getElementById('sideLength3').value;
     const status = document.getElementById('status');
-    const sideLengths = [1, 2, 3]
+    const sideLengths = [sideLength1, sideLength2, sideLength3];
     sideLengths.sort(function(a, b){return a-b});
-    document.getElementById("display") = sideLengths
+    document.getElementById("display").innerHTML = sideLengths;
   }
 </script>
 </html>
