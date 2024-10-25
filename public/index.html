@@ -22,8 +22,8 @@
 </head>
 <body>
     <div>
-        <input id="sideLength1" type="text" placeholder="Side Length 1" />
-        <input id="sideLength2" type="text" placeholder="Side Length 2" />
+        <input id="sideLength1" type="number" placeholder="Side Length 1" />
+        <input id="sideLength2" type="number" placeholder="Side Length 2" />
         <input id="sideLength3" type="number" placeholder="Side Length 3" />
         <button class="button general" onclick="calculate()">Calculate</button>
         <h2 id="display">h</h2>
@@ -32,7 +32,8 @@
 </body>
 <script>
   const display = document.getElementById('display');
-
+  const lengths = [3, 4, 5];
+  document.getElementById('display').innerHTML = lengths[2];
 
 
   function calculate() {
@@ -42,10 +43,10 @@
     const status = document.getElementById('status');
     const sideLengths = [sideLength1, sideLength2, sideLength3];
     sideLengths.sort(function(a, b){return a-b});
-    if (sideLengths[0] + sideLengths[1] > sideLengths[2]) {
+    if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
     } else {
-      document.getElementById('display').innerHTML = "This is not a Triangle";
+      document.getElementById('display').innerHTML = "Not a Triangle";
     }
   }
 </script>
