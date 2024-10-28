@@ -37,7 +37,11 @@
 
 
   function calculate() {
-    const sideLengths = [document.getElementById('sideLength1').value, document.getElementById('sideLength2').value, document.getElementById('sideLength3')];
+    const sideLength1 = document.getElementById('sideLength1').value;
+    const sideLength2 = document.getElementById('sideLength2').value;
+    const sideLength3 = document.getElementById('sideLength3').value;
+    const status = document.getElementById('status');
+    const sideLengths = [sideLength1, sideLength2, sideLength3];
     sideLengths.sort(function(a, b){return a-b});
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
