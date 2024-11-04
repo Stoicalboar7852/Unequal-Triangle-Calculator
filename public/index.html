@@ -46,7 +46,7 @@
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
       const angles = [Math.acos((sideLengths[0]^2 + sideLengths[1]^2 - sideLengths[2]) / (2*sideLengths[0]*sideLengths[1])), Math.acos((sideLengths[1]^2 + sideLengths[2]^2 - sideLengths[0]) / (2*sideLengths[1]*sideLengths[2])), Math.acos((sideLengths[2]^2 + sideLengths[0]^2 - sideLengths[1]) / (2*sideLengths[2]*sideLengths[0]))];
-      document.getElementById('Angles').innerHTML = angles, Number(angles[0]) + Number(angles[1]) + Number(angles[2])
+      document.getElementById('Angles').innerHTML = angles, Number(angles[0]) + Number(angles[1]) + Number(angles[2]);
     } else {
       document.getElementById('display').innerHTML = "Not a Triangle";
     }
