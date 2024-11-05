@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Triangle Inequality Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background-color: black; color: white; }
+    .button { font-size: 1.5em; margin: 5px; padding: 8px 15px; border-radius: 10px; }
+    .increase { background-color: green; color: white; font-size: 2em; padding: 10px 30px; }
+    .decrease { background-color: red; color: white; font-size: 2em; padding: 10px 30px; }
+    .timer { background-color: blue; color: white; }
+    .general { background-color: blue; color: white; }
+    .reset { background-color: blue; color: white; position: absolute; top: 10px; left: 10px; font-size: 1.5em; padding: 8px 20px; }
+    .container { display: flex; justify-content: center; align-items: center; gap: 20px; }
+    .team { text-align: center; }
+    .score-container { display: flex; justify-content: center; align-items: center; gap: 10px; }
+    .team-container { display: flex; justify-content: center; align-items: center; gap: 40px; }
+    input { font-size: 1.2em; padding: 5px 10px; }
+    .score { font-size: 4em; }
+    #controller-timer { font-size: 3em; color: orange; margin-top: 20px; } /* Timer styling */
+  </style>
+</head>
+<body>
+    <div>
+        <input id="sideLength1" type="number" placeholder="Side Length 1" />
+        <input id="sideLength2" type="number" placeholder="Side Length 2" />
+        <input id="sideLength3" type="number" placeholder="Side Length 3" />
+        <button class="button general" onclick="calculate()">Calculate</button>
+        <h2 id="display">h</h2>
+        <p id="Angles"></p>
+      </div>
+</body>
+<script>
+  const display = document.getElementById('display');
+  const lengths = [3, 4, 5];
+  document.getElementById('display').innerHTML = lengths[2];
+
+
+  function calculate() {
+    const sideLength1 = document.getElementById('sideLength1').value;
+    const sideLength2 = document.getElementById('sideLength2').value;
+    const sideLength3 = document.getElementById('sideLength3').value;
+    const status = document.getElementById('status');
+    const sideLengths = [Number(sideLength1), Number(sideLength2), Number(sideLength3)];
+    sideLengths.sort(function(a, b){return a-b});
+    if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
+        const sideRad = 
+      document.getElementById('display').innerHTML = "Triangle";
+      const angles = 404
+      document.getElementById('Angles').innerHTML = angles;
+    } else {
+      document.getElementById('display').innerHTML = "Not a Triangle";
+    }
+  }
+</script>
+</html>
