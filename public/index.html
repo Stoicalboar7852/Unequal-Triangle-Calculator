@@ -27,7 +27,8 @@
         <input id="sideLength3" type="number" placeholder="Side Length 3" />
         <button class="button general" onclick="calculate()">Calculate</button>
         <h2 id="display">h</h2>
-        <p id="Angles"></p>
+        <p id="angles">Angles Display</p>
+        <p id="angles2">Angles Display 2</p>
       </div>
 </body>
 <script>
@@ -41,12 +42,14 @@
     const sideLength2 = document.getElementById('sideLength2').value;
     const sideLength3 = document.getElementById('sideLength3').value;
     const status = document.getElementById('status');
-    const sideLengths = [Number(sideLength1), Number(sideLength2), Number(sideLength3)];
+    const sideLengths = [Number(sideLength1) * Math.PI / 180, Number(sideLength2) * Math.PI / 180, Number(sideLength3) * Math.PI / 180];
     sideLengths.sort(function(a, b){return a-b});
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
-      const angles = [Math.acos((sideLengths[0]^2 + sideLengths[1]^2 - sideLengths[2]) / (2*sideLengths[0]*sideLengths[1])), Math.acos((sideLengths[1]^2 + sideLengths[2]^2 - sideLengths[0]) / (2*sideLengths[1]*sideLengths[2])), Math.acos((sideLengths[2]^2 + sideLengths[0]^2 - sideLengths[1]) / (2*sideLengths[2]*sideLengths[0]))];
-      document.getElementById('Angles').innerHTML = angles;
+      document.getElementById('angles').innerHTML = "Before";
+      const anglesTemp = [(sideLengths[0] + sideLengths[1])]
+      document.getElementById('angles').innerHTML = angles;
+      document.getElementById('angles2').innerHTML = angles[0] + angles[1] + angles[2];
     } else {
       document.getElementById('display').innerHTML = "Not a Triangle";
     }
