@@ -44,7 +44,7 @@
     const sideLengths = [Number(sideLength1), Number(sideLength2), Number(sideLength3)];
     sideLengths.sort(function(a, b){return a-b});
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
-      const sideRad = [Number(sideLengths[0]) * Math.PI / 180, Number(sideLengths[1]) * Math.PI / 180, Number(sideLengths[2]) * Math.PI / 180]
+      const sideRad = [Number(sideLengths[0]) * Math.PI / 180, Number(sideLengths[1]) * Math.PI / 180, Number(sideLengths[2]) * Math.PI / 180];
       document.getElementById('display').innerHTML = "Triangle";
       document.getElementById('Angles').innerHTML = sideRad;
     } else {
