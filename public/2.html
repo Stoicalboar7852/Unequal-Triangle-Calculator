@@ -31,6 +31,7 @@
         <p id="sidesRad">sidesRad</p>
         <p id="anglesRad">anglesRad</p>
         <p id="angles">angles</p>
+        <p id="sum">sum</p>
       </div>
 </body>
 <script>
@@ -51,7 +52,12 @@
     sideLengths.sort(function(a, b){return a-b});
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
-      document.getElementById('sidesRad').innerHTML = sidesRad;
+      const anglesRad = [Math.acos((sidesRad[1] + sidesRad[2] - sidesRad[0]) / (2 * sidesRad[1] * sidesRad[2])), Math.acos((sidesRad[2] + sidesRad[0] - sidesRad[1]) / (2 * sidesRad[2] * sidesRad[0])), Math.acos((sidesRad[0] + sidesRad[1] - sidesRad [2]) / (2 * sidesRad[0] * sidesRad[1]))];
+      document.getElementById("anglesRad").innerHTML = anglesRad;
+      const angles = [anglesRad[0] * 180 / Math.PI, anglesRad[1] * 180 / Math.PI, anglesRad[2] * 180 / Math.PI];
+      document.getElementById("angles").innerHTML = angles;
+      const sum = angles[0] + angles[1] + angles[2];
+      document.getElementById("sum").innerHTML = sum;
     } else {
       document.getElementById('display').innerHTML = "Not a Triangle";
     }
