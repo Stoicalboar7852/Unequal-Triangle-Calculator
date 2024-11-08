@@ -46,9 +46,10 @@
     const status = document.getElementById('status');
     const sideLengths = [Number(sideLength1), Number(sideLength2), Number(sideLength3)];
     document.getElementById("sides").innerHTML = sideLengths;
+    const sidesRad = [Number(sideLengths[0]) * Math.PI / 180, Number(sideLengths[1]) * Math.PI / 180, Number(sideLengths[2]) * Math.PI / 180];
+    document.getElementId("sidesRad").innerHTML = sidesRad;
     sideLengths.sort(function(a, b){return a-b});
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
-      const sidesRad = [Number(sideLengths[0]) * Math.PI / 180, Number(sideLengths[1]) * Math.PI / 180, Number(sideLengths[2]) * Math.PI / 180];
       document.getElementById('display').innerHTML = "Triangle";
       document.getElementById('sidesRad').innerHTML = sidesRad;
     } else {
