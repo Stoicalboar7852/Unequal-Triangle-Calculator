@@ -47,12 +47,12 @@
     const status = document.getElementById('status');
     const sideLengths = [Number(sideLength1), Number(sideLength2), Number(sideLength3)];
     document.getElementById("sides").innerHTML = sideLengths;
-    const sidesRad = [Number(sideLengths[0]) * Math.PI / 180, Number(sideLengths[1]) * Math.PI / 180, Number(sideLengths[2]) * Math.PI / 180];
-    document.getElementId("sidesRad").innerHTML = sidesRad;
+    const sidesRad = [Number(sideLength1) * Math.PI / 180, Number(sideLength2) * Math.PI / 180, Number(sideLength3) * Math.PI / 180];
+    document.getElementById("sidesRad").innerHTML = sidesRad;
     sideLengths.sort(function(a, b){return a-b});
     if (Number(sideLengths[0]) + Number(sideLengths[1]) > sideLengths[2]) {
       document.getElementById('display').innerHTML = "Triangle";
-      const anglesRad = [Math.acos((sidesRad[1] + sidesRad[2] - sidesRad[0]) / (2 * sidesRad[1] * sidesRad[2])), Math.acos((sidesRad[2] + sidesRad[0] - sidesRad[1]) / (2 * sidesRad[2] * sidesRad[0])), Math.acos((sidesRad[0] + sidesRad[1] - sidesRad [2]) / (2 * sidesRad[0] * sidesRad[1]))];
+      const anglesRad = [sidesRad];
       document.getElementById("anglesRad").innerHTML = anglesRad;
       const angles = [anglesRad[0] * 180 / Math.PI, anglesRad[1] * 180 / Math.PI, anglesRad[2] * 180 / Math.PI];
       document.getElementById("angles").innerHTML = angles;
